@@ -1,4 +1,4 @@
-// countDucks.cpp 
+// myProg02.cpp 
 // P. Conrad for CS16, Winter 2015
 // Example program to read from file and count occurences
 
@@ -19,16 +19,29 @@ int main(int argc, char *argv[])
   string txtLine;
 
   int duckCount = 0;
-  
+  int animals = 0;
+  int nonDuck = 0;
+
+
   ifs.open(argv[1]);
   while(!ifs.eof())
   {
     if (txtLine=="duck")
-       {
-          duckCount++;
-       }
+    {
+       duckCount++;
+       animals++;
+    }
+    else
+    {
+       nonDuck++;
+       animals++;
+    }
     getline(ifs,txtLine);
   }
-  cout << "There were " << duckCount << " in " << argv[1] << endl;
+  cout << "Report for " << argv[1] << ":" << endl;
+  cout << "   Animal count:    " << animals-1 << endl;
+  cout << "   Duck count:      " << duckCount << endl;
+  cout << "   Non duck count:  " << nonDuck-1<< endl;
+  
   return 0;
 }
